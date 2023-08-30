@@ -1,0 +1,480 @@
+/* 1. Posicionamiento --> static, absolute, relative, fixed
+2. Modelo caja (Box model) --> margin, border, padding, content
+3. Tipografía  --> tipos, tamaños de fuente, etc
+4. Visuales --> box-shadow, border-radius, gradient, etc
+5. Otros --> reglas CSS y más 
+*/
+
+
+
+:root{
+
+
+--Soft-red: hsl(7, 99%, 70%);
+--Yellow: hsl(51, 100%, 49%);
+--Dark-desaturated-cyan: hsl(167, 40%, 24%);
+--Dark-blue: hsl(198, 62%, 26%);
+--ms-fullscreen-moderate-cyan-footer: hsl(168, 56%, 62%);
+--header-blue: hsl(200, 100%, 62%);
+
+--Very-dark-desaturated-blue: hsl(212, 27%, 19%);
+--Grayish-blue: hsl(200, 14%, 96%);
+--White: hsl(0, 0%, 100%);
+
+--Font-titulo: 'Fraunces', serif; 
+--Font-parrafo: 'Barlow', sans-serif;
+
+
+}
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 62.5%;    
+  }
+
+  header{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    min-width: 320px;
+    height: 100vh;
+    font-family: var(--Font-parrafo);
+    background-image: url("../img/mobile/image-header.jpg");
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-size: cover;
+    
+   
+
+
+  }
+
+
+
+.header-nav{
+
+    position: fixed;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: 8rem;
+    padding: 2rem;
+   
+    background-color: var(--header-blue);
+   
+    z-index: 1;
+}
+
+
+.header-nav-btn{
+    width: 30px;
+    height: 25px;
+    border: none;
+    background: none;
+    cursor: pointer;
+    
+ 
+  
+}
+
+.header-nav-menu{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: fixed;
+    right: 0; 
+    margin: 5rem 3rem 0 0;
+    width: 30rem;
+    height: 280px;
+    background-image: url("../icon/Rectangle.svg");
+    transform: scale(0);
+    transform-origin: top right;
+    transition: transform .5s ease-in-out;
+   
+
+   
+      
+}
+
+.activo{
+    transform: scale(1);
+    transition: transform .3s ease-in-out;
+   
+
+}
+
+
+.header-nav-menu_item{
+   padding: 1rem;
+   font-size: 2rem;
+   list-style: none;
+   
+}
+
+
+.header-nav-menu_item_link{ 
+    display: flex;
+    color: var(--Dark-blue);
+    font-weight: 600;
+    text-decoration: none;
+    text-transform: uppercase;
+    cursor: pointer;
+   
+}
+
+.header-nav-menu_item_link:hover{
+    padding: 0.3rem 3rem;
+    color: var(--Very-dark-desaturated-blue);
+    border-radius: 20px;
+    background-color: var(--Grayish-blue);
+    transition: 0.7s;
+}
+
+
+.contacto{
+    padding: 1rem;
+    border-radius: 40px;
+    font-size: 1.5rem;
+    color: var(--Very-dark-desaturated-blue);
+    background-color: var(--Yellow);
+    
+}
+
+
+.header-banner{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    width: 100%;
+    height: 50vh;
+    margin-top: 10rem;
+}
+
+
+
+.header-banner-flecha{
+    width: 3rem;
+    height: 13rem;
+    animation: flechaAnimacion .5s linear infinite alternate;
+    pointer-events: none;
+   
+   
+  
+   
+}
+
+@keyframes flechaAnimacion {
+    0%{
+        transform: translatex(0);
+        position: relative;
+    }
+    100%{
+        transform: translateY(10%);
+        position: relative;
+    }
+}
+
+
+.header-banner-titulo{
+
+    width: 100%;
+    padding-bottom: 3rem;
+    text-align: center;
+    font-size: 4rem;
+    letter-spacing: 1rem;
+    color: white;
+    font-weight: 900;
+    font-family: var(--Font-parrafo);
+  
+   
+}
+
+
+
+/* Main */
+
+main{
+  width: 100%;
+  min-width: 320px;
+  height: auto;
+  overflow: hidden;
+}
+
+
+/* contenido de servicios */
+
+
+.main-contenido-img img {
+    width: 100%;
+    height: 360px;
+    max-width: 1000px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+}
+
+
+
+.main-servicio{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 40vh;
+    text-align: center;
+    justify-content: space-around;
+    background-color: var(--White);
+}
+
+.main-servicios-titulo{
+    font-size: 2.7rem;
+    font-weight: 900;
+    font-family: var(--Font-titulo);
+}
+.main-servicios-parrafo{
+    width: 80%;
+    font-size: 1.5rem;
+    font-weight: 300;
+    font-family: var(--Font-parrafo);
+}
+
+.main-servicios-link{
+   font-size: 1.5rem;
+   font-weight: 900;
+    line-height: 1.25rem;
+    font-family:  var(--Font-titulo);
+    cursor: pointer;
+}
+
+.main-servicios-link::after{
+    content: '';
+    display: block;
+    width: 12rem;
+    height: 5px;
+    margin: -0.4rem auto 0;
+    border-radius: 0.3125rem;
+}
+
+.fondo1::after{
+    background-color: rgba(250, 212, 0, 0.29);
+}
+
+.fondo2::after{
+    background: rgba(254, 120, 103, 0.29);
+}
+
+
+.main-servicios-link:hover::after{
+ height: 12px;
+ margin: -1.1rem auto 0;
+ transition: .5s linear; 
+}
+
+/* Contenido de servicios con img  */
+
+
+.main-serviciosImg{
+    width: 100%;
+    height: 90vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: end;
+    background-size:cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    
+}
+
+.grafico{
+    background-image: url("../img/mobile/image-graphic-design.jpg");
+    color: var(--Dark-desaturated-cyan);
+    
+}
+
+
+.fotografia{
+    background-image: url("../img/mobile/image-photography.jpg");
+    color: var(--Dark-blue);
+   
+}
+
+
+
+.main-serviciosImg-contenido{
+    margin-bottom: 5rem;
+    text-align: center;
+}
+
+.main-serviciosImg-contenido-titulo{
+    margin: 2rem;
+    font-size: 2.5rem;
+    font-weight: 900;
+    font-family: var(--Font-titulo);
+}
+
+.main-serviciosImg-contenido-parrafo{
+    width: 70%;
+    margin: 0 auto;
+    padding: 0 1rem 0 1rem;
+    font-size: 1.7rem;
+    font-weight: 300;
+    font-family: var(--Font-parrafo);
+}
+
+
+
+.main-clientes{
+    width: 100%;
+    height: 150vh;
+    text-align: center;
+    background-color: var(--Grayish-blue);
+}
+
+.main-clientes-titulo{
+    width: 100%;
+    font-size: 2rem;
+    margin-bottom: 3rem;
+    padding: 2rem;
+    color: var(--Dark-grayish-blue);
+    font-family: var(--Font-titulo);
+}
+
+.main-clientes-contenido{
+    margin-bottom: 7rem;
+}
+
+
+
+.main-clientes-contenido-perfil{
+    width: 7rem;
+    height: 7rem;
+    margin: 1rem;
+    border-radius: 6.25rem;
+}
+
+.main-clientes-contenido-parrafo{
+    width: 80%;
+    padding: 2rem;
+    margin:  0 auto;
+    font-size: 1.7rem;
+    font-weight: 700;
+    line-height: 2rem;
+    font-family: var(--Font-parrafo);
+    color: var(--Dark-grayish-blue);
+}
+
+.main-clientes-contenido-nombre{
+    padding: .5rem;
+    font-size: 1.5rem;
+    font-weight: 900;
+    font-family: var(--Font-titulo);
+}
+
+.main-clientes-contenido-profesion{
+    font-size: 1.4rem;
+    font-weight: 900;
+    font-family: var(--Font-titulo);
+    color: var(--Dark-grayish-blue);
+
+}
+
+
+/* Contenido de proyecto    */
+
+.main-proyecto{
+    width: 100%;
+    height: 80vh;
+    display: flex;
+    flex-wrap: wrap;
+   overflow: hidden;
+}
+
+.main-proyecto-img{
+    width: 50%;  
+    height: 50%;
+    
+}
+
+.main-proyecto-img img {
+    width: 100%;  
+    height: 100%;
+    
+    background-size:cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    
+}
+
+/* footer */
+
+footer{
+    width: 100%;
+    min-width: 320px;
+    height: 30vh;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+    background-color: var(--ms-fullscreen-moderate-cyan-footer);
+}
+
+.footer-lista{
+    display: flex;
+    gap: 3rem;
+  
+}
+
+.footer-lista-item{
+    list-style: none;
+    font-weight: 900;
+
+}
+
+.footer-lista-item_link{
+    font-size: 2rem;
+    text-decoration: none;
+    font-family: var(--Font-parrafo);
+    color: #2C7566;
+   
+}
+
+.footer-lista-item_link:hover{
+    color: var(--Soft-red);
+}
+
+
+.footer-icon img{
+    margin: 0 2rem 0 2rem;
+    
+}
+
+.footer-icon img:hover{
+    scale: 1.5;
+    transition: .5s;
+    
+}
+
+.footer-credito{
+    font-size: 1.5rem;
+    font-family: var(--Font-parrafo);
+    color: var(--Dark-desaturated-cyan);
+}
+
+.footer-credito a {
+    text-decoration: none;
+    color: var(--Very-dark-desaturated-blue);
+    
+}
+
+.footer-credito a:hover{
+    color: rgb(255, 255, 255);
+}
