@@ -14,11 +14,11 @@ Los usuarios deberían poder:
 
 ### Links
 
-- Live Site URL: [Add live site URL here](https://sunnyside-agency03.netlify.app/)
+- URL del sitio activo: (https://sunnyside-agency03.netlify.app/)
 
-## My process
+## Mi proceso
 
-### Built with
+### Construido con
 
 - HTML5 Semántico 
 - CSS 
