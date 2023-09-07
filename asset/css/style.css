@@ -395,13 +395,14 @@ main{
     height: 80vh;
     display: flex;
     flex-wrap: wrap;
-   overflow: hidden;
+    
 }
 
 .main-proyecto-img{
     width: 50%;  
     height: 50%;
-    
+    overflow: hidden;
+
 }
 
 .main-proyecto-img img {
